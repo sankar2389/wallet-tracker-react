@@ -35,19 +35,19 @@ export default function Update() {
             <Form className="create-form">
                 <Form.Field>
                     <label>Date</label>
-                    <input type="date" placeholder='Date' value={date} onChange={(e) => setDate(e.target.value)}/>
+                    <input type="date" required="required" placeholder='Date' value={date} onChange={(e) => setDate(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Description</label>
-                    <input placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)}/>
+                    <input placeholder='Description' required="required" value={description} onChange={(e) => setDescription(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Income</label>
-                    <input type="number" placeholder='Income' value={income} onChange={(e) => setIncome(e.target.value)}/>
+                    <input type="number" required="required" placeholder='Income' value={income} onChange={(e) => setIncome(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Expense</label>
-                    <input type="number" placeholder='Expense' value={expense} onChange={(e) => setExpense(e.target.value)}/>
+                    <input type="number" required="required" placeholder='Expense' value={expense} onChange={(e) => setExpense(e.target.value)}/>
                 </Form.Field>
                 <Button type='submit' onClick={updateAPIData}>Update</Button>
             </Form>
