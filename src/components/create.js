@@ -25,19 +25,19 @@ export default function Create() {
             <Form className="create-form">
                 <Form.Field>
                     <label>Date</label>
-                    <input type="date" placeholder='Date' onChange={(e) => setDate(e.target.value)}/>
+                    <input type="date" required="required" placeholder='Date' onChange={(e) => setDate(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Description</label>
-                    <input placeholder='Description' onChange={(e) => setDescription(e.target.value)}/>
+                    <input placeholder='Description' required="required" onChange={(e) => setDescription(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Income</label>
-                    <input type="number" placeholder='Income' onChange={(e) => setIncome(e.target.value)}/>
+                    <input type="number" required="required" placeholder='Income' onChange={(e) => setIncome(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Expense</label>
-                    <input type="number" placeholder='Expense' onChange={(e) => setExpense(e.target.value)}/>
+                    <input type="number" required="required" placeholder='Expense' onChange={(e) => setExpense(e.target.value)}/>
                 </Form.Field>
                 <Button onClick={postData} type='submit'>Submit</Button>
             </Form>
