@@ -10,6 +10,8 @@ export default function Update() {
     const [description, setDescription] = useState('');
     const [income, setIncome] = useState('');
     const [expense, setExpense] = useState('');
+    
+    const areAllFieldsFilled = (date != "") && (description != "") && (income != "") && (expense != "");
 
     useEffect(() => {
         setID(localStorage.getItem('ID'))
@@ -49,7 +51,7 @@ export default function Update() {
                     <label>Expense</label>
                     <input type="number" required="required" placeholder='Expense' value={expense} onChange={(e) => setExpense(e.target.value)}/>
                 </Form.Field>
-                <Button type='submit' onClick={updateAPIData}>Update</Button>
+                <Button type='submit' disabled={!areAllFieldsFilled} onClick={updateAPIData}>Update</Button>
             </Form>
         </div>
     )
