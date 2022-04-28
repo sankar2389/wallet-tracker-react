@@ -9,6 +9,9 @@ export default function Create() {
     const [description, setDescription] = useState('');
     const [income, setIncome] = useState('');
     const [expense, setExpense] = useState('');
+
+    const areAllFieldsFilled = (date != "") && (description != "") && (income != "") && (expense != "");
+
     const postData = () => {
         axios.post(`https://tx6ld3.sse.codesandbox.io/wallet`, {
             date,
@@ -39,7 +42,7 @@ export default function Create() {
                     <label>Expense</label>
                     <input type="number" required="required" placeholder='Expense' onChange={(e) => setExpense(e.target.value)}/>
                 </Form.Field>
-                <Button onClick={postData} type='submit'>Submit</Button>
+                <Button disabled={!areAllFieldsFilled} onClick={postData} type='submit'>Submit</Button>
             </Form>
         </div>
     )
